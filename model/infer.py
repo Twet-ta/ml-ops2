@@ -1,26 +1,12 @@
+# infer.py
 from pickle import load
 
 import dvc.api
+import hydra
 import pandas as pd
+from omegaconf import DictConfig
 from sklearn.metrics import accuracy_score, f1_score, precision_score
 from sklearn.model_selection import train_test_split
-
-
-def load_data():
-    # Load the dataset locally or through DVC
-    with dvc.api.open("data/iris_dataset.csv") as fd:
-        df = pd.read_csv(fd)
-
-    X = df.drop("target", axis=1)
-    y = df["target"]
-    return X, y
-
-
-def load_model():
-    # Load the trained Support Vector Machine model using DVC
-    with open("./iris_pickle.pkl", "rb") as file:
-        model = load(file)
-    return model
 
 
 def save_predictions(X_test, y_test, predictions):
@@ -39,9 +25,14 @@ def print_metrics(y_test, predictions):
     print("precision: ", precision_score(y_test, predictions, average="micro"))
 
 
-if __name__ == "__main__":
+@hydra.main(config_path="configs", config_name="post", version_base="1.3")
+def infer(cfg: DictConfig):
     # Load data
-    X, y = load_data()
+    with dvc.api.open("data/iris_dataset.csv") as fd:
+        df = pd.read_csv(fd)
+
+    X = df.drop("target", axis=1)
+    y = df["target"]
 
     # Split the data set into training and testing
     X_train, X_test, y_train, y_test = train_test_split(
@@ -49,13 +40,28 @@ if __name__ == "__main__":
     )
 
     # Load model
-    trained_model = load_model()
+    with open("./iris_pickle.pkl", "rb") as file:
+        trained_model = load(file)
 
     # Predict from the test dataset
     predictions = trained_model.predict(X_test)
 
-    # Save predictions
-    save_predictions(X_test, y_test, predictions)
+    if cfg.postprocess.save_predictions:
+        # Save predictions if configured
+        save_predictions(X_test, y_test, predictions)
+
+    if cfg.postprocess.visualize_results:
+        # Visualize results if configured
+        visualize_results(y_test, predictions)
 
     # Print metrics
     print_metrics(y_test, predictions)
+
+
+def visualize_results(y_true, y_pred):
+    # Add visualization code here based on your needs
+    pass
+
+
+if __name__ == "__main__":
+    infer()
