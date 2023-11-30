@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 def load_data():
     # Load the dataset locally or through DVC
-    with dvc.api.open_url("model/iris_dataset.csv", repo="myremote") as fd:
+    with dvc.api.open("data/iris_dataset.csv") as fd:
         df = pd.read_csv(fd)
 
     X = df.drop("target", axis=1)
@@ -18,7 +18,7 @@ def load_data():
 
 def load_model():
     # Load the trained Support Vector Machine model using DVC
-    with dvc.api.open_url("model/iris_model.pkl", repo="myremote") as file:
+    with open("./iris_pickle.pkl", "rb") as file:
         model = load(file)
     return model
 

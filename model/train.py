@@ -7,9 +7,8 @@ from sklearn.svm import SVC
 
 
 def load_data():
-    data_dvc_path = "data/iris_dataset.csv"
-    remote_name = "myremote"
-    with dvc.api.open(data_dvc_path, repo=remote_name) as fd:
+    # Load the dataset locally or through DVC
+    with dvc.api.open("data/iris_dataset.csv") as fd:
         df = pd.read_csv(fd)
 
     X = df.drop("target", axis=1)
@@ -18,6 +17,7 @@ def load_data():
 
 
 def train_model(X_train, y_train):
+    # Train Support Vector Machine model
     svc = SVC()
     svc.fit(X_train, y_train)
     return svc
