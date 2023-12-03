@@ -1,0 +1,11 @@
+preprocess:
+  columns:
+  - sepal length (cm)
+  - sepal width (cm)
+  - petal length (cm)
+  - petal width (cm)
+train:
+  estim: 100
+mlflow_config:
+  MLFLOW_TRACKING_URI: http://localhost:5000
+  MLFLOW_S3_ENDPOINT_URL: http://localhost:9000

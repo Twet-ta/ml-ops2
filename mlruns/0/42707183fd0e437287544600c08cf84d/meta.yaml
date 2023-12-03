@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/42707183fd0e437287544600c08cf84d/artifacts
+end_time: 1701598267235
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 42707183fd0e437287544600c08cf84d
+run_name: sneaky-carp-362
+run_uuid: 42707183fd0e437287544600c08cf84d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701598267214
+status: 3
+tags: []
+user_id: twetta

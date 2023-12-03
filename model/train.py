@@ -7,10 +7,12 @@ import dvc.api
 import hydra
 import matplotlib.pyplot as plt
 import mlflow
+import mlflow.onnx
 import mlflow.sklearn
 import numpy as np
 import pandas as pd
 from omegaconf import DictConfig
+from skl2onnx import to_onnx
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
     ConfusionMatrixDisplay,
@@ -19,6 +21,7 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import label_binarize
 
 
 def custom_precision_recall(y_true, y_probabilities):
@@ -35,14 +38,15 @@ def custom_precision_recall(y_true, y_probabilities):
             true_positive = sum((y_true == class_label) & (y_pred == 1))
             false_positive = sum((y_true != class_label) & (y_pred == 1))
             false_negative = sum((y_true == class_label) & (y_pred == 0))
+            eps = 1e-10
 
             precision = (
-                true_positive / (true_positive + false_positive)
+                true_positive / (true_positive + false_positive + eps)
                 if (true_positive + false_positive) > 0
                 else 0
             )
             recall = (
-                true_positive / (true_positive + false_negative)
+                true_positive / (true_positive + false_negative + eps)
                 if (true_positive + false_negative) > 0
                 else 0
             )
@@ -66,13 +70,18 @@ def custom_roc_curve(y_true, y_probabilities):
 
         for threshold in thresholds:
             y_pred = (class_probs > threshold).astype(int)
-            true_positive = np.sum((y_true == 1) & (y_pred == 1))
-            false_positive = np.sum((y_true == 0) & (y_pred == 1))
-            true_negative = np.sum((y_true == 0) & (y_pred == 0))
-            false_negative = np.sum((y_true == 1) & (y_pred == 0))
+            y_t_c = y_true == class_label
+            y_t_nc = y_true != class_label
+            y_p_c = y_pred == class_label
+            y_p_nc = y_pred != class_label
+            tp = np.sum(y_t_c & y_p_c)
+            fp = np.sum(y_t_nc & y_p_c)
+            tn = np.sum(y_t_nc & y_p_nc)
+            fn = np.sum(y_t_c & y_p_nc)
+            eps = 1e-10
 
-            sensitivity = true_positive / (true_positive + false_negative)
-            specificity = true_negative / (true_negative + false_positive)
+            sensitivity = tp / (tp + fn + eps)
+            specificity = tn / (tn + fp + eps)
             fpr_list.append(1 - specificity)
             tpr_list.append(sensitivity)
         all_fpr.append(fpr_list)
@@ -91,23 +100,16 @@ def custom_macro_average(precisions, recalls):
 
 def custom_macro_average_roc_auc(y_true, y_probabilities):
     num_classes = y_probabilities.shape[1]
-    thresholds = np.linspace(0, 1, 100)
-    all_auc = []
+    # thresholds = np.linspace(0, 1, 100)
+    # all_auc = []
+    y_true_bin = label_binarize(y_true, classes=np.unique(y_true))
 
-    for class_label in range(num_classes):
-        class_probs = y_probabilities[:, class_label]
-        auc_list = []
-
-        for threshold in thresholds:
-            y_pred = (class_probs > threshold).astype(int)
-            auc = roc_auc_score(y_true, y_pred)
-            auc_list.append(auc)
-
-        all_auc.append(auc_list)
-
-    macro_auc = np.mean(all_auc, axis=0)
-
-    return macro_auc
+    # Compute ROC AUC for each class
+    auc_list = []
+    for cl in range(num_classes):
+        auc = roc_auc_score(y_true_bin[:, cl], y_probabilities[:, cl])
+        auc_list.append(auc)
+    return auc_list
 
 
 @hydra.main(config_path="configs", config_name="config", version_base="2.1")
@@ -153,6 +155,10 @@ def train(cfg: DictConfig):
     with open("model/iris_model.pkl", "wb") as fd:
         dump(clf, fd)
 
+    onx = to_onnx(clf, np.array(X[:1]))
+    with open("model/rf_iris.onnx", "wb") as f:
+        f.write(onx.SerializeToString())
+
     # mlflow.log_param('timestamp', datetime.now().strftime('%m-%d %H:%M:%S'))
     mlflow.log_params(
         {
@@ -180,7 +186,7 @@ def train(cfg: DictConfig):
     disp.plot(ax=ax)
 
     # Log the confusion matrix figure
-    mlflow.log_figure(fig, "confusion_matrix.png")
+    # mlflow.log_figure(fig, "confusion_matrix.png")
     plt.close(fig)
 
     # Получение предсказаний вероятностей для каждого класса
@@ -217,14 +223,13 @@ def train(cfg: DictConfig):
     plt.title("Macro-Averaged Precision-Recall Curve with Custom Metrics")
     plt.legend()
 
-    thresholds = np.linspace(0, 1, 100)
-    macro_auc = custom_macro_average_roc_auc(y_test, y_probabilities)
-
+    # thresholds = np.linspace(0, 1, 100)
+    macro_auc = custom_roc_curve(y_test, y_probabilities)
     plt.figure(figsize=(8, 8))
 
     plt.plot(
-        thresholds,
-        macro_auc,
+        np.mean(macro_auc, axis=1)[0],
+        np.mean(macro_auc, axis=1)[1],
         label="Macro-Averaged ROC AUC Curve",
         color="black",
         linestyle="--",
@@ -244,7 +249,7 @@ def train(cfg: DictConfig):
 
     # Сохранение изображения и логирование в MLflow
     plt.savefig("macro_roc_auc_curve.png")
-    mlflow.log_artifact("macro_roc_auc_curve.png")
+    # mlflow.log_artifact("macro_roc_auc_curve.png")
 
     # Логирование метрик в MLflow
     mlflow.log_metrics(
@@ -256,7 +261,7 @@ def train(cfg: DictConfig):
 
     # Сохранение изображения и логирование в MLflow
     plt.savefig("precision_recall_curve.png")
-    mlflow.log_artifact("precision_recall_curve.png")
+    # mlflow.log_artifact("precision_recall_curve.png")
 
     # Log accuracy
     accuracy = accuracy_score(y_test, clf.predict(X_test))

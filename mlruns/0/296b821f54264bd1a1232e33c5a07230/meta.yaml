@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/296b821f54264bd1a1232e33c5a07230/artifacts
+end_time: 1701598228749
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 296b821f54264bd1a1232e33c5a07230
+run_name: stylish-fish-333
+run_uuid: 296b821f54264bd1a1232e33c5a07230
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701598228730
+status: 3
+tags: []
+user_id: twetta

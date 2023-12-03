@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/4c618056d9c34a2597bd00b07974aee8/artifacts
+end_time: 1701598297336
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4c618056d9c34a2597bd00b07974aee8
+run_name: peaceful-wren-251
+run_uuid: 4c618056d9c34a2597bd00b07974aee8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701598297316
+status: 3
+tags: []
+user_id: twetta

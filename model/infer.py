@@ -40,7 +40,7 @@ def infer(cfg: DictConfig):
     )
 
     # Load model
-    with open("./iris_pickle.pkl", "rb") as file:
+    with open("model/iris_model.pkl", "rb") as file:
         trained_model = load(file)
 
     # Predict from the test dataset

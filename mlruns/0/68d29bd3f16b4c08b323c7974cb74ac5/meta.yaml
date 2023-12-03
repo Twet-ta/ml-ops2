@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/68d29bd3f16b4c08b323c7974cb74ac5/artifacts
+end_time: 1701597831120
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 68d29bd3f16b4c08b323c7974cb74ac5
+run_name: judicious-dove-369
+run_uuid: 68d29bd3f16b4c08b323c7974cb74ac5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701597831107
+status: 4
+tags: []
+user_id: twetta
