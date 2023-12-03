@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/dc81c3177c614b5db7aa1634b66f829b/artifacts
+end_time: 1701518261813
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dc81c3177c614b5db7aa1634b66f829b
+run_name: magnificent-sow-81
+run_uuid: dc81c3177c614b5db7aa1634b66f829b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701518258403
+status: 4
+tags: []
+user_id: twetta

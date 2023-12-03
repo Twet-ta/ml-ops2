@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/4ea81472b3074ad5b38066bb86940d39/artifacts
+end_time: 1701518042717
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4ea81472b3074ad5b38066bb86940d39
+run_name: bold-wasp-63
+run_uuid: 4ea81472b3074ad5b38066bb86940d39
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701518039413
+status: 4
+tags: []
+user_id: twetta

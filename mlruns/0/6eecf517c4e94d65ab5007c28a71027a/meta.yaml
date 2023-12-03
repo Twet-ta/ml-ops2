@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/6eecf517c4e94d65ab5007c28a71027a/artifacts
+end_time: 1701460005739
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6eecf517c4e94d65ab5007c28a71027a
+run_name: caring-whale-93
+run_uuid: 6eecf517c4e94d65ab5007c28a71027a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701460002321
+status: 3
+tags: []
+user_id: twetta

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/344b3309724b41959bc7f7c116cb4cca/artifacts
+end_time: 1701459684073
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 344b3309724b41959bc7f7c116cb4cca
+run_name: gaudy-mole-815
+run_uuid: 344b3309724b41959bc7f7c116cb4cca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701459680759
+status: 3
+tags: []
+user_id: twetta

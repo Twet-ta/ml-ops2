@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/f64189d1049142cc82870d65c2abbc3e/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f64189d1049142cc82870d65c2abbc3e
+run_name: traveling-ape-866
+run_uuid: f64189d1049142cc82870d65c2abbc3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701520551881
+status: 1
+tags: []
+user_id: twetta

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/b4b527c557c2428b837f7881a699e6e3/artifacts
+end_time: 1701517878204
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b4b527c557c2428b837f7881a699e6e3
+run_name: salty-elk-243
+run_uuid: b4b527c557c2428b837f7881a699e6e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701517875406
+status: 4
+tags: []
+user_id: twetta

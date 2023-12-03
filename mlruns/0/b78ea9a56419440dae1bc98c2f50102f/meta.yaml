@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/b78ea9a56419440dae1bc98c2f50102f/artifacts
+end_time: 1701518478315
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b78ea9a56419440dae1bc98c2f50102f
+run_name: bemused-hound-428
+run_uuid: b78ea9a56419440dae1bc98c2f50102f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701518474591
+status: 3
+tags: []
+user_id: twetta

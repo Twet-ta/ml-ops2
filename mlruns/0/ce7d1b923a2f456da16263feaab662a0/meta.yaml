@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/ce7d1b923a2f456da16263feaab662a0/artifacts
+end_time: 1701457785327
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ce7d1b923a2f456da16263feaab662a0
+run_name: casual-stag-139
+run_uuid: ce7d1b923a2f456da16263feaab662a0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701457782250
+status: 3
+tags: []
+user_id: twetta

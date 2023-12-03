@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/b876e5ce2a2b4f53b958a98a4b191683/artifacts
+end_time: 1701459743256
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b876e5ce2a2b4f53b958a98a4b191683
+run_name: illustrious-cod-914
+run_uuid: b876e5ce2a2b4f53b958a98a4b191683
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701459739632
+status: 3
+tags: []
+user_id: twetta

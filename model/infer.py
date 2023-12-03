@@ -25,7 +25,7 @@ def print_metrics(y_test, predictions):
     print("precision: ", precision_score(y_test, predictions, average="micro"))
 
 
-@hydra.main(config_path="configs", config_name="post", version_base="1.3")
+@hydra.main(config_path="configs", config_name="post", version_base="2.1")
 def infer(cfg: DictConfig):
     # Load data
     with dvc.api.open("data/iris_dataset.csv") as fd:

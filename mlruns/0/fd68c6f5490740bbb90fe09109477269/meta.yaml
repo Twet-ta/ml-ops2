@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/fd68c6f5490740bbb90fe09109477269/artifacts
+end_time: 1701518316823
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd68c6f5490740bbb90fe09109477269
+run_name: resilient-cod-180
+run_uuid: fd68c6f5490740bbb90fe09109477269
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701518313355
+status: 4
+tags: []
+user_id: twetta

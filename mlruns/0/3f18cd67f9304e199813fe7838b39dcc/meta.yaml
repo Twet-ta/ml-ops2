@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/3f18cd67f9304e199813fe7838b39dcc/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3f18cd67f9304e199813fe7838b39dcc
+run_name: fearless-snail-75
+run_uuid: 3f18cd67f9304e199813fe7838b39dcc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701521256827
+status: 1
+tags: []
+user_id: twetta

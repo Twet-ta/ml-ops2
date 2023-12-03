@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/f78f3b7845874b2a9cb65ce207b96c0e/artifacts
+end_time: 1701460141728
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f78f3b7845874b2a9cb65ce207b96c0e
+run_name: unique-deer-856
+run_uuid: f78f3b7845874b2a9cb65ce207b96c0e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701460138229
+status: 3
+tags: []
+user_id: twetta

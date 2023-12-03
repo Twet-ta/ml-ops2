@@ -1,3 +1,0 @@
-postprocess:
-  visualize_results: true
-  save_predictions: false

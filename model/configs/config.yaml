@@ -5,5 +5,7 @@ preprocess:
     - petal length (cm)
     - petal width (cm)
 train:
-  C: 1.0
-  kernel: linear
+  estim: 100
+mlflow_config:
+  MLFLOW_TRACKING_URI: http://localhost:5000
+  MLFLOW_S3_ENDPOINT_URL: http://localhost:9000

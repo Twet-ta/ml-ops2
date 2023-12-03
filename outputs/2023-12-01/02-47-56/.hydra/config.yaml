@@ -1,9 +1,0 @@
-preprocess:
-  columns:
-  - sepal length
-  - sepal width
-  - petal length
-  - petal width
-train:
-  C: 1.0
-  kernel: linear

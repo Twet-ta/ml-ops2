@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/c4e61c6dd4b2423db40ea806198b1a6d/artifacts
+end_time: 1701520551877
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c4e61c6dd4b2423db40ea806198b1a6d
+run_name: thundering-bass-833
+run_uuid: c4e61c6dd4b2423db40ea806198b1a6d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701520551424
+status: 3
+tags: []
+user_id: twetta

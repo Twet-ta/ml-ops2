@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/a378e1f3e5a34462bdfb70c3ae5a2106/artifacts
+end_time: 1701518396006
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a378e1f3e5a34462bdfb70c3ae5a2106
+run_name: likeable-hen-267
+run_uuid: a378e1f3e5a34462bdfb70c3ae5a2106
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701518392374
+status: 3
+tags: []
+user_id: twetta

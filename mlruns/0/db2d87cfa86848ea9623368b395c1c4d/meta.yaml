@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/db2d87cfa86848ea9623368b395c1c4d/artifacts
+end_time: 1701457837663
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: db2d87cfa86848ea9623368b395c1c4d
+run_name: agreeable-squid-316
+run_uuid: db2d87cfa86848ea9623368b395c1c4d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701457834275
+status: 3
+tags: []
+user_id: twetta

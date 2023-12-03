@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/8a2711996e95425ca318466e53e6533f/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8a2711996e95425ca318466e53e6533f
+run_name: industrious-owl-378
+run_uuid: 8a2711996e95425ca318466e53e6533f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701520495692
+status: 1
+tags: []
+user_id: twetta

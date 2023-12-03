@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/de719fa357724edca9ed957a7bd1fb91/artifacts
+end_time: 1701520830290
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: de719fa357724edca9ed957a7bd1fb91
+run_name: clumsy-wasp-945
+run_uuid: de719fa357724edca9ed957a7bd1fb91
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701520829831
+status: 3
+tags: []
+user_id: twetta

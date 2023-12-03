@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/257f821e68034f7fb84913c26a848857/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 257f821e68034f7fb84913c26a848857
+run_name: amazing-stork-368
+run_uuid: 257f821e68034f7fb84913c26a848857
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701520137149
+status: 1
+tags: []
+user_id: twetta

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/b68bf60023d540b09e1d49aa94ed8545/artifacts
+end_time: 1701459950919
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b68bf60023d540b09e1d49aa94ed8545
+run_name: bemused-mare-591
+run_uuid: b68bf60023d540b09e1d49aa94ed8545
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701459947584
+status: 3
+tags: []
+user_id: twetta

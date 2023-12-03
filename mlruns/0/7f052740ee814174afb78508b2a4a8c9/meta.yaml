@@ -1,0 +1,15 @@
+artifact_uri: file:///home/twetta/ml-ops2/mlruns/0/7f052740ee814174afb78508b2a4a8c9/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7f052740ee814174afb78508b2a4a8c9
+run_name: beautiful-trout-793
+run_uuid: 7f052740ee814174afb78508b2a4a8c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701521316992
+status: 1
+tags: []
+user_id: twetta
